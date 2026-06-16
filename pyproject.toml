@@ -1,0 +1,21 @@
+[project]
+name = "markdown-link-pagerank"
+version = "0.1.0"
+description = "Dependency-free PageRank reports for Markdown link graphs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Tanner" }]
+keywords = ["markdown", "pagerank", "knowledge-base", "obsidian", "graph"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.scripts]
+markdown-link-pagerank = "markdown_link_pagerank:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

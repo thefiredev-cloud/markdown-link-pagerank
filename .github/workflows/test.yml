@@ -1,0 +1,22 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 -m unittest discover -s tests
+      - run: >-
+          python3 src/markdown_link_pagerank.py
+          --root examples/sample-vault
+          --output /tmp/markdown-link-pagerank-report.md
+          --json /tmp/markdown-link-pagerank-report.json
+          --keywords "architecture,decision,index"
+          --limit 5
